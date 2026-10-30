@@ -149,11 +149,7 @@ def build_icon(size: int = 512) -> Image.Image:
     top, bottom = size * 0.07, size * 0.07 + row_h + size * 0.12
     span = size - 2 * m
     gap = size * 0.028
-    # Orange Leiste ueber der oberen Reihe, wie bei FotoRepomat (dort der T-Balken)
-    letter_cell_w = (span - gap * 4) / 5
-    row(cv, "VIDEO", m, top, span, row_h, s, gap)
-    cv.stroke("orange", [(m + 2 * (letter_cell_w + gap) + s / 2, top + s / 2),
-                         (size - m - s / 2, top + s / 2)], s)
+    row(cv, "VIDEO", m, top, span, row_h, s, gap, orange={4})
     row(cv, "REPO", m, bottom, span, row_h, s, gap * 1.4, orange={3})
     return flat_rgba(cv.result((size, size)))
 
@@ -166,10 +162,7 @@ def build_logo(width: int = 900) -> Image.Image:
     big_h = height * 0.56
     gap = width * 0.025
     span = width - 2 * m
-    cell = (span - gap * 4) / 5
-    row(cv, "VIDEO", m, height * 0.03, span, big_h, s_big, gap)
-    cv.stroke("orange", [(m + 2 * (cell + gap) + s_big / 2, height * 0.03 + s_big / 2),
-                         (width - m - s_big / 2, height * 0.03 + s_big / 2)], s_big)
+    row(cv, "VIDEO", m, height * 0.03, span, big_h, s_big, gap, orange={4})
     s_small = width * 0.021
     row(cv, "REPOMAT", m, height * 0.66, span, height * 0.28, s_small, width * 0.012, orange={3})
     return bevel_rgba(cv.result((width, height)), bevel=width * 0.019)
