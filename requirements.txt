@@ -1,0 +1,30 @@
+# PyTorch wird separat mit CUDA-Index installiert (siehe installer/setup_env.ps1 bzw. README)
+# torch
+# torchvision
+# torchaudio
+
+# Bildverarbeitung
+opencv-python
+Pillow
+numpy
+
+# ffmpeg-Binary (gebuendelt, kein System-ffmpeg noetig)
+imageio-ffmpeg
+
+# Real-ESRGAN (Detailschaerfe pro Frame)
+realesrgan
+basicsr
+
+# DDColor (optionale Kolorierung)
+modelscope
+datasets
+simplejson
+sortedcontainers
+timm
+
+# GUI
+PySide6
+
+# Hilfsbibliotheken
+huggingface_hub
+tqdm
